@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\UpSchoolECommerce.Shared\UpSchoolECommerce.Shared.csproj" />
   </ItemGroup>
 

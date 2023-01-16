@@ -25,29 +25,73 @@ namespace UpSchoolECommerce.Services.Catalog.Services.Concrete
             _mapper = mapper;
 
         }
+        //ürün ekleme
         public async Task<ResponseDto<ProductDto>> CreateAsync(CreateProductDto createProductDto)
         {
-            throw new System.NotImplementedException();
+            var product = _mapper.Map<Product>(createProductDto);//productdto'yu entity olan product ile eşleştirip ekleme yapacak
+            await _productCollection.InsertOneAsync(product);
+            return ResponseDto<ProductDto>.Success(_mapper.Map<ProductDto>(product), 200); //datanın eklenmiş halini yanıtın sonucunu görmek için productdto'yu parametre olarak alır.
+            //yine dto ve entity'i bağlamak için mapper ile maplenerek veri gönderiliyor
         }
 
+        //silme işlemi
         public async Task<ResponseDto<NoContent>> DeleteAsync(string id)
         {
-            throw new System.NotImplementedException();
+            var result = await _productCollection.DeleteOneAsync(x => x.Id == id);//DeleteOneAsync içindeki id'ye göre silme yapar.
+            if (result.DeletedCount > 0)
+            {
+                //silinen eleman sayısı>0 ise yani silme işlemi başarılı ise
+                return ResponseDto<NoContent>.Success(204);
+                    //silinen kaydı bana tekrar göstermesine gerek yok bu sebeple NoContent kullanıyorum.
+                    //Bu kez durum kodu 204 olur yani işlem başarılı ama geriye dönen bir içerik yok demektir.
+
+            }
+            else
+            {
+                return ResponseDto<NoContent>.Fail("Silinecek ürün bulunamadı.",404);//eğer başarısız olursa hata mesajı verecek fail overload'u kullanalım.
+            }
         }
 
+        //listeleme işlemi
         public async Task<ResponseDto<List<ProductDto>>> GetAllAsync()
         {
-            throw new System.NotImplementedException();
-        }
+            var products = await _productCollection.Find(product => true).ToListAsync();
+            return ResponseDto<List<ProductDto>>.Success(_mapper.Map<List<ProductDto>>(products), 200);
 
+        }
+        //id'ye göre veri getirme
         public async Task<ResponseDto<ProductDto>> GetByIdAsync(string id)
         {
-            throw new System.NotImplementedException();
+            var products = await _productCollection.Find<Product>(x => x.Id == id).FirstOrDefaultAsync();
+            if (products == null)
+            {
+                return ResponseDto<ProductDto>.Fail("Girilen ID'ye ait  bir ürün bulunamadı.",404);
+            }
+            else
+            {
+                return ResponseDto<ProductDto>.Success(_mapper.Map<ProductDto>(products), 200);
+
+            }
+
         }
 
+        //güncelleme işlemi
         public async Task<ResponseDto<NoContent>> UpdateAsync(UpdateProductDto updateProductDto)
         {
-            throw new System.NotImplementedException();
+            var updatedProduct = _mapper.Map<Product>(updateProductDto);
+            var result = await _productCollection.FindOneAndReplaceAsync(x => x.Id == updateProductDto.Id,updatedProduct);
+            //ilk parametre neye göre güncellenecek ikincisi ise güncellenmiş yeni verilerin olduğu hali
+
+            if (result == null)
+            {
+                return ResponseDto<NoContent>.Fail("Güncellenecek ürün bulunamadı", 404);
+            }
+            else
+            {
+                return ResponseDto<NoContent>.Success(204);
+            }
+
+
         }
     }
 }

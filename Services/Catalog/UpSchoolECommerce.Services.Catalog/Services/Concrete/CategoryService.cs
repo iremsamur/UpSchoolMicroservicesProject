@@ -25,20 +25,43 @@ namespace UpSchoolECommerce.Services.Catalog.Services.Concrete
             _mapper = mapper;
             
         }
-
+        //ekleme işlemi
         public async Task<ResponseDto<CategoryDto>> CreateAsync(CategoryDto categoryDto)
         {
-            throw new System.NotImplementedException();
-        }
+            var category = _mapper.Map<Category>(categoryDto);
+            await _categoryCollection.InsertOneAsync(category);
+            //InsertOneAsync async olarak tekil ekleme yapar. Birde InsertMany var oda çoğul ekleme yapar. Metot async olduğu için Async metot kullanılır.
+            //Burada savechanges kullanılmıyor. InsertOneAsync mongoya değişiklikleri yansıtıyor.
+            return ResponseDto<CategoryDto>.Success(_mapper.Map<CategoryDto>(category), 200);
 
-        public async Task<ResponseDto<List<CategoryDto>>> GetAllASync()
+        }
+        //tüm verileri listeleme
+        public async Task<ResponseDto<List<CategoryDto>>> GetAllAsync()
         {
-            throw new System.NotImplementedException();
-        }
+            //tüm verileri listeleyecek metot
+            var categories = await _categoryCollection.Find(category => true).ToListAsync();//find metodu bir parametre alır. Parametreye herhangi bir değil verilebilir.
+            //Burada tamamını listelediğimiz için yani bir şart olmadığı için parametrenin ne olduğu çok önemli olmuyor. o yüzden category=>true verdik.
+            return ResponseDto<List<CategoryDto>>.Success(_mapper.Map<List<CategoryDto>>(categories),200);//yazdığımız Success metodunu burada çağırıyoruz.
+            //entity ve dto eşleştirmesini yapabilmek için veritabanından getirdiğimiz categories ile sergilemmeyi sağlayacak CategoryDto'yu içine parametre vererek maplieyip eşleştiriyoruz
+            //Success metodu içinde ResponseDto ile verileri ve durum kodu 200'ü gönderiyoruz.
 
+
+        }
+        //id'ye göre getirme
         public async Task<ResponseDto<CategoryDto>> GetByIdAsync(string id)
         {
-            throw new System.NotImplementedException();
+            var category = await _categoryCollection.Find<Category>(x => x.Id == id).FirstOrDefaultAsync(); //Category sınıfında çalış ve id değeri gönderilene eşit olana getir diyoruz.
+            if (category == null)
+            {
+                return ResponseDto<CategoryDto>.Fail("Kategori bulunamadı.",404);//eğer o id'de bir kategori yoksa fail dönecek ve durum kodu 404 olur.
+
+            }
+            else
+            {
+                return ResponseDto<CategoryDto>.Success(_mapper.Map<CategoryDto>(category),200);
+                //veriyi getirirken her zaman mapleyerek getirir.
+                //çünkü doğrudan entity!ler kullanılmaz. dto ile model eşleştirilerek kullanılır
+            }
         }
     }
 }

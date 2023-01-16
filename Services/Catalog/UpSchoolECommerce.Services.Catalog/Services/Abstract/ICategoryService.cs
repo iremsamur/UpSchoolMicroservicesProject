@@ -11,7 +11,7 @@ namespace UpSchoolECommerce.Services.Catalog.Services.Abstract
         //kategorilerin tamamını listeleyen metot
         //dönen response'a göre cevap gönderecek metotları çağırmak için 
         //ResponseDto dönüyor. Bu ResponseDto generic olduğu için tüm veirleri getireceği için list türünde ve yazdığımız CategoryDto türünde dönüyor
-        Task<ResponseDto<List<CategoryDto>>> GetAllASync();
+        Task<ResponseDto<List<CategoryDto>>> GetAllAsync();
 
         //ekleme işlemi
         Task<ResponseDto<CategoryDto>> CreateAsync(CategoryDto categoryDto);//modeli burada kullanmıyoruz. Verileri dto'dan entity'e tşaıyacak o yüzden listeleme veya eklenecek veriler
