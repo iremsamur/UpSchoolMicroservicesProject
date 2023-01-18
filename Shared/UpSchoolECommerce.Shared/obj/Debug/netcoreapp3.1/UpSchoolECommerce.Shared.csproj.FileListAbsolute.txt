@@ -1,0 +1,10 @@
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Shared\UpSchoolECommerce.Shared\bin\Debug\netcoreapp3.1\UpSchoolECommerce.Shared.deps.json
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Shared\UpSchoolECommerce.Shared\bin\Debug\netcoreapp3.1\UpSchoolECommerce.Shared.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Shared\UpSchoolECommerce.Shared\bin\Debug\netcoreapp3.1\UpSchoolECommerce.Shared.pdb
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Shared\UpSchoolECommerce.Shared\obj\Debug\netcoreapp3.1\UpSchoolECommerce.Shared.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Shared\UpSchoolECommerce.Shared\obj\Debug\netcoreapp3.1\UpSchoolECommerce.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Shared\UpSchoolECommerce.Shared\obj\Debug\netcoreapp3.1\UpSchoolECommerce.Shared.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Shared\UpSchoolECommerce.Shared\obj\Debug\netcoreapp3.1\UpSchoolECommerce.Shared.AssemblyInfo.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Shared\UpSchoolECommerce.Shared\obj\Debug\netcoreapp3.1\UpSchoolECommerce.Shared.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Shared\UpSchoolECommerce.Shared\obj\Debug\netcoreapp3.1\UpSchoolECommerce.Shared.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Shared\UpSchoolECommerce.Shared\obj\Debug\netcoreapp3.1\UpSchoolECommerce.Shared.pdb

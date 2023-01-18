@@ -135,3 +135,5 @@ C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\IdentityServer\UpSc
 C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\IdentityServer\UpSchoolECommerce.IdentityServer\obj\Debug\netcoreapp3.1\UpSchoolECommerce.IdentityServer.dll
 C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\IdentityServer\UpSchoolECommerce.IdentityServer\obj\Debug\netcoreapp3.1\UpSchoolECommerce.IdentityServer.pdb
 C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\IdentityServer\UpSchoolECommerce.IdentityServer\obj\Debug\netcoreapp3.1\UpSchoolECommerce.IdentityServer.genruntimeconfig.cache
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\IdentityServer\UpSchoolECommerce.IdentityServer\bin\Debug\netcoreapp3.1\UpSchoolECommerce.Shared.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\IdentityServer\UpSchoolECommerce.IdentityServer\bin\Debug\netcoreapp3.1\UpSchoolECommerce.Shared.pdb

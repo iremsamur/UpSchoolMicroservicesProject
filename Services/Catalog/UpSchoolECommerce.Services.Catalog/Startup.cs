@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -29,6 +30,17 @@ namespace UpSchoolECommerce.Services.Catalog
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //jwt bearer paketini burada import ediyoruz.
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                //burada bütün mikroservislerimi identity ile haberleþtireceðim.
+                options.Authority = Configuration["IdentityServerURL"];//buraya appsettings.json içinde tanýmladýðýmýz IdentityServerUrl keyini veriyoruz.Authority identity server ile bulunduðumuz katalog servisini baðlýyor. Girecek kiþinin bilgi kontrolünü saðlayýp o sayfaya yönlendirecek
+                options.Audience = "Resources_Catalog"; //þuanda katalog mikroservis yapýlandýrmasýný yazdýðým için onun resource'ünü yazacaðým
+                options.RequireHttpsMetadata = false;
+                //bu komut https gerekli deðil http ile de baðlantý saðlayabilecek
+
+
+            });
             //dependency injection için soyut ve somut servis sýnýf eþleþtirmesini yazýyoruz
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
@@ -60,6 +72,8 @@ namespace UpSchoolECommerce.Services.Catalog
             }
 
             app.UseRouting();
+
+            app.UseAuthentication();//yetki kontrolü için bunuda ekliyoruz
 
             app.UseAuthorization();
 

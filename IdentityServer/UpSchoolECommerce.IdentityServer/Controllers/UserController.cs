@@ -1,14 +1,18 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using System.Threading.Tasks;
 using UpSchoolECommerce.IdentityServer.DTOs;
 using UpSchoolECommerce.IdentityServer.Models;
-
+using UpSchoolECommerce.Shared.Dtos;
+using static IdentityServer4.IdentityServerConstants;
 
 namespace UpSchoolECommerce.IdentityServer.Controllers
 {
-    [Route("api/[controller]")]
+    [Authorize(LocalApi.PolicyName)]//bunu sayfaya yetki erişimini düzenleyebilmek için ekledik
+    [Route("api/[controller]/[action]")]//buraya controller sonrasına [action] ekleyerek metot isimlerini alır. Yani postman üzerinde bu apiye istek yaparken metot ismiyle istek yapabileceğim. Bu action'ı eklemeseydim sadece Controller sınıf adı ile istek atabilir olacaktım.
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -33,7 +37,7 @@ namespace UpSchoolECommerce.IdentityServer.Controllers
             if (!result.Succeeded)
             {
                 //eğer başarılı değilse
-                return BadRequest();//400 hata kodu
+                return BadRequest(ResponseDto<NoContent>.Fail(result.Errors.Select(x=>x.Description).ToList(),400));//400 hata kodu
 
             }
             return NoContent();

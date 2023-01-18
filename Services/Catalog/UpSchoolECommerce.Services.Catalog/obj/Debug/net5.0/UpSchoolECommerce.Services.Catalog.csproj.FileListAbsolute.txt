@@ -48,3 +48,10 @@ C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Catalog\Up
 C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Catalog\UpSchoolECommerce.Services.Catalog\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
 C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Catalog\UpSchoolECommerce.Services.Catalog\bin\Debug\net5.0\UpSchoolECommerce.Shared.dll
 C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Catalog\UpSchoolECommerce.Services.Catalog\bin\Debug\net5.0\UpSchoolECommerce.Shared.pdb
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Catalog\UpSchoolECommerce.Services.Catalog\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Catalog\UpSchoolECommerce.Services.Catalog\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Catalog\UpSchoolECommerce.Services.Catalog\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Catalog\UpSchoolECommerce.Services.Catalog\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Catalog\UpSchoolECommerce.Services.Catalog\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Catalog\UpSchoolECommerce.Services.Catalog\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Catalog\UpSchoolECommerce.Services.Catalog\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
