@@ -28,6 +28,7 @@ namespace UpSchoolECommerce.IdentityServer.Services
                 var errors = new Dictionary<string, object>();
                 errors.Add("errors", "email adresiniz veya şifreniz yanlıştır.");//ilk parametre string key, ikinci value string olur.
                 context.Result.CustomResponse = errors;
+                return;
             }
             var passwordCheck = await _userManager.CheckPasswordAsync(existUser, context.Password);
             if (passwordCheck == false)
@@ -36,6 +37,7 @@ namespace UpSchoolECommerce.IdentityServer.Services
                 var errors = new Dictionary<string, object>();
                 errors.Add("errors", "email adresiniz veya şifreniz yanlıştır.");//ilk parametre string key, ikinci value string olur.
                 context.Result.CustomResponse = errors;
+                return;
 
             }
             //eğer şifre ya da password yukarıdakilere takılmazsa

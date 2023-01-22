@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,6 +29,23 @@ namespace UpSchoolECommerce.Services.PhotoStock
         {
 
             services.AddControllers();
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                //burada bütün mikroservislerimi identity ile haberleþtireceðim.
+                options.Authority = Configuration["IdentityServerURL"];//buraya appsettings.json içinde tanýmladýðýmýz IdentityServerUrl keyini veriyoruz.Authority identity server ile bulunduðumuz katalog servisini baðlýyor. Girecek kiþinin bilgi kontrolünü saðlayýp o sayfaya yönlendirecek
+                options.Audience = "Resources_PhotoStock"; //þuanda katalog mikroservis yapýlandýrmasýný yazdýðým için onun resource'ünü yazacaðým
+                options.RequireHttpsMetadata = false;
+                //bu komut https gerekli deðil http ile de baðlantý saðlayabilecek
+
+
+            });
+
+            services.AddControllers(opt =>
+            {
+                opt.Filters.Add(new AuthorizeFilter());//proje seviyesinde authorize uyguluyor
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "UpSchoolECommerce.Services.PhotoStock", Version = "v1" });
@@ -43,8 +62,10 @@ namespace UpSchoolECommerce.Services.PhotoStock
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "UpSchoolECommerce.Services.PhotoStock v1"));
             }
 
+            app.UseStaticFiles();//wwwroot kullanýlacak
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

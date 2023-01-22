@@ -1,15 +1,22 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
+using UpSchoolECommerce.Services.Basket.Services;
+using UpSchoolECommerce.Services.Basket.Settings;
+using UpSchoolECommerce.Shared.Services;
 
 namespace UpSchoolECommerce.Services.Basket
 {
@@ -25,12 +32,45 @@ namespace UpSchoolECommerce.Services.Basket
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddControllers();
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
+            services.AddControllers(opt =>
+            {
+                opt.Filters.Add(new AuthorizeFilter());
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "UpSchoolECommerce.Services.Basket", Version = "v1" });
             });
+
+            //Redis ayarlarý
+            services.Configure<RedisSettings>(Configuration.GetSection("RedisSettings"));//Burada GetSection içine appsettings.json içinde verdiðimiz key deðerini veriyoruz
+
+            //þimdi burada RedisService'i tanýmlayalým.
+            services.AddSingleton<RedisService>(sp =>
+            {
+                var redisSettings = sp.GetRequiredService<IOptions<RedisSettings>>().Value;
+
+                var redis = new RedisService(redisSettings.Host,redisSettings.Port);
+                redis.Connect();
+                return redis;
+            });
+
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+        
+                options.Authority = Configuration["IdentityServerURL"];//
+                options.Audience = "Resources_Basket"; 
+                options.RequireHttpsMetadata = false;
+               
+
+
+            });
+
+            //kullanýcý bilgilerini getiren htttpcontextaccessor ve ISharedIdentityServi,ce konfigürasyonlarý
+            services.AddHttpContextAccessor();
+            services.AddScoped<ISharedIdentityService, SharedIdentityService>();
+            services.AddScoped<IBasketService, BasketService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,7 +84,7 @@ namespace UpSchoolECommerce.Services.Basket
             }
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

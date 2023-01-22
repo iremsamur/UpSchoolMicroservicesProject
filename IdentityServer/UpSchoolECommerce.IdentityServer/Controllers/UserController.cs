@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 using UpSchoolECommerce.IdentityServer.DTOs;
@@ -41,6 +43,20 @@ namespace UpSchoolECommerce.IdentityServer.Controllers
 
             }
             return NoContent();
+
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetUser(){
+            var userid = User.Claims.FirstOrDefault(x => x.Type == JwtRegisteredClaimNames.Sub);//sub kullanıcının id'sini tutuyor.
+            var user = await _userManager.FindByIdAsync(userid.Value);
+
+            return Ok(new
+            {
+                Id = user.Id,
+                UserName = user.UserName,
+                Email=user.Email,
+                City=user.City
+            });
 
         }
     }
