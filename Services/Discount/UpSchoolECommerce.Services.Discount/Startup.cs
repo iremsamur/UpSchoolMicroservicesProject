@@ -30,7 +30,8 @@ namespace UpSchoolECommerce.Services.Discount
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");//Bunu token alýnan kullanýcý id'sine göre yani giriþ yapan kullanýcý id deðerine göre
+            //veri getirmem gerektiði zaman id'yi almak için sub'ý alýyorum sub=id
 
             services.AddHttpContextAccessor();
             services.AddScoped<ISharedIdentityService, SharedIdentityService>();

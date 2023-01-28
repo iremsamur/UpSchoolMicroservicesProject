@@ -1,1 +1,6 @@
 Catalog--> 5011
+PhotoStock --> 5012
+Identity --> 5001
+Basket port --> 5013
+Discount --> 5014
+Order --> 5015

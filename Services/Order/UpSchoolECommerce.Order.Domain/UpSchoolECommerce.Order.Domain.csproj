@@ -4,4 +4,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UpSchoolECommerce.Order.Domain.Core\UpSchoolECommerce.Order.Domain.Core.csproj" />
+  </ItemGroup>
+
 </Project>

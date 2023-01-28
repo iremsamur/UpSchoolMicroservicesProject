@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "UpSchoolECommerce.Order.Domain.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/UpSchoolECommerce.Order.Domain.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UpSchoolECommerce.Order.Domain.Core.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "UpSchoolECommerce.Order.Domain.Core/1.0.0": {
+      "type": "project",
+      "path": "../UpSchoolECommerce.Order.Domain.Core/UpSchoolECommerce.Order.Domain.Core.csproj",
+      "msbuildProject": "../UpSchoolECommerce.Order.Domain.Core/UpSchoolECommerce.Order.Domain.Core.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "UpSchoolECommerce.Order.Domain.Core >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\User\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\User\\Desktop\\UpSchoolBootcamp\\UpSchoolMicroservices\\Services\\Order\\UpSchoolECommerce.Order.Domain.Core\\UpSchoolECommerce.Order.Domain.Core.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\UpSchoolBootcamp\\UpSchoolMicroservices\\Services\\Order\\UpSchoolECommerce.Order.Domain.Core\\UpSchoolECommerce.Order.Domain.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

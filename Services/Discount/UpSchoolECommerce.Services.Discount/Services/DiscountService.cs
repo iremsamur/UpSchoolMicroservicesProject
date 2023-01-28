@@ -25,7 +25,7 @@ namespace UpSchoolECommerce.Services.Discount.Services
         {
             //dapper+postgresql kodları
             //dapper veritabanları ile senkron bir şekilde çalışan bir orm'dir.
-            var status = await _dbConnection.ExecuteAsync("delete from discount where ID=@id", new
+            var status = await _dbConnection.ExecuteAsync("delete from discount where id=@id", new
             {
                 id = id
             });
@@ -47,7 +47,7 @@ namespace UpSchoolECommerce.Services.Discount.Services
 
         public async Task<ResponseDto<Models.Discount>> GetByID(int id)
         {
-            var discounts = (await _dbConnection.QueryAsync<Models.Discount>("select * from discount where Id=@id", new
+            var discounts = (await _dbConnection.QueryAsync<Models.Discount>("select * from discount where id=@id", new
             {
                 id=id
             })).SingleOrDefault();
@@ -69,7 +69,7 @@ namespace UpSchoolECommerce.Services.Discount.Services
 
         public async Task<ResponseDto<NoContent>> Update(Models.Discount discount)
         {
-            var status = await _dbConnection.ExecuteAsync("update discount set userid=@UserID,rate=@Rate,code=@Code where Id=@id", discount);
+            var status = await _dbConnection.ExecuteAsync("update discount set userid=@UserID,rate=@Rate,code=@Code where id=@id", discount);
             if (status > 0)
             {
                 return ResponseDto<NoContent>.Success(204);
