@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "UpSchoolECommerce.Order.Domain/1.0.0": {
+        "dependencies": {
+          "UpSchoolECommerce.Order.Domain.Core": "1.0.0"
+        },
+        "runtime": {
+          "UpSchoolECommerce.Order.Domain.dll": {}
+        }
+      },
+      "UpSchoolECommerce.Order.Domain.Core/1.0.0": {
+        "runtime": {
+          "UpSchoolECommerce.Order.Domain.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UpSchoolECommerce.Order.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UpSchoolECommerce.Order.Domain.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

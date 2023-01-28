@@ -10,7 +10,7 @@ namespace UpSchoolECommerce.Order.Infrastructure
     public class OrderDbContext : DbContext
     {
         public const string Default_Schema = "ordering";
-        public OrderDbContext(DbContextOptions<DbContext> options):base(options)
+        public OrderDbContext(DbContextOptions<OrderDbContext> options):base(options)
         {
             //bu kullanımın anlamı bağlantı adresinin başka yerden verileceği.
             //Yani veritabanı connectionstring burada yazılmayacak
@@ -37,7 +37,7 @@ namespace UpSchoolECommerce.Order.Infrastructure
             //decimal(18,2) ile decimal'in formatını belirliyoruz
             //Başka kısıtlamalarda yazalım.
 
-            modelBuilder.Entity<Domain.OrderAggregate.OrderItem>().Property(x => x.Name).HasColumnType("nvarchr(100)");
+            modelBuilder.Entity<Domain.OrderAggregate.OrderItem>().Property(x => x.Name).HasColumnType("nvarchar(100)");
 
 
             //Buradaki bu atamaları da ayrı bir class üzerinde tutup SOLID'e daha uygun bir kullanım olarak da yazılabilirdi

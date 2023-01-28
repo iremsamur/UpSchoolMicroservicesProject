@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Order.Domain\bin\Debug\net5.0\UpSchoolECommerce.Order.Domain.deps.json
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Order.Domain\bin\Debug\net5.0\UpSchoolECommerce.Order.Domain.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Order.Domain\bin\Debug\net5.0\UpSchoolECommerce.Order.Domain.pdb
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Order.Domain\bin\Debug\net5.0\UpSchoolECommerce.Order.Domain.Core.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Order.Domain\bin\Debug\net5.0\UpSchoolECommerce.Order.Domain.Core.pdb
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Order.Domain\obj\Debug\net5.0\UpSchoolECommerce.Order.Domain.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Order.Domain\obj\Debug\net5.0\UpSchoolECommerce.Order.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Order.Domain\obj\Debug\net5.0\UpSchoolECommerce.Order.Domain.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Order.Domain\obj\Debug\net5.0\UpSchoolECommerce.Order.Domain.AssemblyInfo.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Order.Domain\obj\Debug\net5.0\UpSchoolECommerce.Order.Domain.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Order.Domain\obj\Debug\net5.0\UpSchoolECommerce.Order.Domain.csproj.CopyComplete
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Order.Domain\obj\Debug\net5.0\UpSchoolECommerce.Order.Domain.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Order.Domain\obj\Debug\net5.0\refint\UpSchoolECommerce.Order.Domain.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Order.Domain\obj\Debug\net5.0\UpSchoolECommerce.Order.Domain.pdb
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Order.Domain\obj\Debug\net5.0\ref\UpSchoolECommerce.Order.Domain.dll
