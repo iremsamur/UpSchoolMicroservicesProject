@@ -1,0 +1,92 @@
+{
+  "Routes": [
+    {
+      //tüm mikroservisler için gateways konfigürasyonunu yazalım.
+      //catalog 5011 mikroservisi için gateways konfigürasyon
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http", //Burasıda http çalışacak
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost", //hostumuz localhost olacak
+          "Port": 5011 //localhostta catalog için port numarası buraya yazılacak
+        }
+      ],
+      "UpstreamPathTemplate": "/Services/Catalog/{everything}", //everything burada ocelot içindeki metot. Yani anlamı Catalog içindeki her şeyi consume et anlamındadır.
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ], //Burada kullanılacak metotları tanımlıyoruz. Get, Post vb.
+      "UpstreamScheme": "http" //Bu http olarak çalışacak
+    },
+    //photostock 5012 mikroservisi için gateways konfigürasyon
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http", //Burasıda http çalışacak
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost", //hostumuz localhost olacak
+          "Port": 5012 //localhostta photostock için port numarası buraya yazılacak
+        }
+      ],
+      "UpstreamPathTemplate": "/Services/PhotoStock/{everything}", //everything burada ocelot içindeki metot. Yani anlamı Catalog içindeki her şeyi consume et anlamındadır.
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ], //Burada kullanılacak metotları tanımlıyoruz. Get, Post vb.
+      "UpstreamScheme": "http" //Bu http olarak çalışacak
+    },
+    //basket 5013 mikroservisi için gateways konfigürasyon
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http", //Burasıda http çalışacak
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost", //hostumuz localhost olacak
+          "Port": 5013
+        }
+      ],
+      "UpstreamPathTemplate": "/Services/Basket/{everything}", //everything burada ocelot içindeki metot. Yani anlamı Catalog içindeki her şeyi consume et anlamındadır.
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ], //Burada kullanılacak metotları tanımlıyoruz. Get, Post vb.
+      "UpstreamScheme": "http" //Bu http olarak çalışacak
+    },
+    //discount 5014 mikroservisi için gateways konfigürasyon
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http", //Burasıda http çalışacak
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost", //hostumuz localhost olacak
+          "Port": 5014 //localhostta photostock için port numarası buraya yazılacak
+        }
+      ],
+      "UpstreamPathTemplate": "/Services/Discount/{everything}", //everything burada ocelot içindeki metot. Yani anlamı Catalog içindeki her şeyi consume et anlamındadır.
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ], //Burada kullanılacak metotları tanımlıyoruz. Get, Post vb.
+      "UpstreamScheme": "http" //Bu http olarak çalışacak
+    },
+    //5015 order mikroservisi için gateways konfigürasyon
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http", //Burasıda http çalışacak
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost", //hostumuz localhost olacak
+          "Port": 5015 //localhostta photostock için port numarası buraya yazılacak
+        }
+      ],
+      "UpstreamPathTemplate": "/Services/Order/{everything}", //everything burada ocelot içindeki metot. Yani anlamı Catalog içindeki her şeyi consume et anlamındadır.
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ], //Burada kullanılacak metotları tanımlıyoruz. Get, Post vb.
+      "UpstreamScheme": "http" //Bu http olarak çalışacak
+    },
+    //fakepayment 5016 mikroservisi için gateways konfigürasyon
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http", //Burasıda http çalışacak
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost", //hostumuz localhost olacak
+          "Port": 5012 //localhostta photostock için port numarası buraya yazılacak
+        }
+      ],
+      "UpstreamPathTemplate": "/Services/FakePayment/{everything}", //everything burada ocelot içindeki metot. Yani anlamı Catalog içindeki her şeyi consume et anlamındadır.
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ], //Burada kullanılacak metotları tanımlıyoruz. Get, Post vb.
+      "UpstreamScheme": "http" //Bu http olarak çalışacak
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5000"//Burası 5000 olacak. Çünkü gateways'in çalışmasına 5000 verdik.
+  }
+}

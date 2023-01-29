@@ -20,10 +20,10 @@ namespace UpSchoolECommerce.IdentityServer
                            Scopes={"Catalog_FullPermission"}
                        },
                        
-                       // new ApiResource("Resources_Order"){
-                       //    Scopes={"Order_FullPermission"}
-                       //}
-                       // ,
+                        new ApiResource("Resources_Order"){
+                           Scopes={"Order_FullPermission"}
+                       }
+                        ,
                         new ApiResource("Resources_Discount"){
                            Scopes={"Discount_FullPermission"}
                        },
@@ -31,11 +31,15 @@ namespace UpSchoolECommerce.IdentityServer
                            Scopes={"Basket_FullPermission"}
                        },
                        // ,
-                       // new ApiResource("Resources_Payment"){
-                       //    Scopes={"Payment_FullPermission"}
-                       //},
+                        new ApiResource("Resources_Payment"){
+                           Scopes={"Payment_FullPermission"}
+                       },
                         new ApiResource("Resources_Photo_Stock"){
                            Scopes={ "Photo_Stock_FullPermission" }
+                       },
+                        //gateways için api resource
+                        new ApiResource("Resources_Gateway"){
+                           Scopes={ "Gateway_FullPermission" }
                        },
                          //şimdi bu yukarıdaki apiresource'ları identity ile eşleştirelim.
                       new ApiResource(IdentityServerConstants.LocalApi.ScopeName)//eşleştirme için bunu ekliyoruz
@@ -74,10 +78,16 @@ namespace UpSchoolECommerce.IdentityServer
                   new ApiScope("Basket_FullPermission","Sepet API için tam yetkili erişim."),
 
                 //  //ödeme için
-                //    new ApiScope("Payment_FullPermission","Ödeme API için tam yetkili erişim."),
+                    new ApiScope("Payment_FullPermission","Ödeme API için tam yetkili erişim."),
 
                     //Fotoğraflar
                       new ApiScope("Photo_Stock_FullPermission","Fotoğraf API için tam yetkili erişim."),
+
+                      //Orders
+                       new ApiScope("Order_FullPermission","Sipariş API için tam yetkili erişim."),
+
+                      //Gateways
+                      new ApiScope("Gateway_FullPermission","Gateway API için tam yetkili erişim."),
 
                       //şimdi bu yukarıdaki apiscope'ları identity ile eşleştirelim.
                       new ApiScope(IdentityServerConstants.LocalApi.ScopeName)//eşleştirme için bunu ekliyoruz
@@ -100,7 +110,9 @@ namespace UpSchoolECommerce.IdentityServer
                     ClientSecrets = { new Secret("secret".Sha256()) },
 
                     //tüm full permissionları burada yazılır. Yani eğer client geçerse buradaki tüm scopelara erişim izni olacak
-                    AllowedScopes = { "Catalog_FullPermission", /*"Order_FullPermission" , "Discount_FullPermission", "Basket_FullPermission", "Payment_FullPermission",*/ "Photo_Stock_FullPermission", "Basket_FullPermission", "Discount_FullPermission", IdentityServerConstants.LocalApi.ScopeName }
+                    AllowedScopes = { "Catalog_FullPermission", /*"Order_FullPermission" , "Discount_FullPermission", "Basket_FullPermission", "Payment_FullPermission",*/ "Photo_Stock_FullPermission",
+                        "Gateway_FullPermission",
+                        IdentityServerConstants.LocalApi.ScopeName }
                     //giriş yapmadan gelen kullanıcı bu sayfalara erişim sağlayabilecek
 
                     //Eğer benim tokenımın süresi bitmişse (mesela 1 saat) otantike olmamışsa yetkisi yoksa, token almamışsa bu alanlara erişemeycek gibi kontrolleri yapmam gerekiyor. 
@@ -120,7 +132,7 @@ namespace UpSchoolECommerce.IdentityServer
                    
 
                     AllowOfflineAccess = true,
-                    AllowedScopes = { "Catalog_FullPermission","Basket_FullPermission", IdentityServerConstants.StandardScopes.Email,IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile,IdentityServerConstants.StandardScopes.OfflineAccess,IdentityServerConstants.LocalApi.ScopeName}//böylece token'ın içerisinde email de bizi karşılar. Böylece bu {} içinde belirttiklerimi token içerisinde gireceğiz.
+                    AllowedScopes = { "Catalog_FullPermission","Basket_FullPermission", "Gateway_FullPermission", "Payment_FullPermission", "Discount_FullPermission", "Order_FullPermission", IdentityServerConstants.StandardScopes.Email,IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile,IdentityServerConstants.StandardScopes.OfflineAccess,IdentityServerConstants.LocalApi.ScopeName}//böylece token'ın içerisinde email de bizi karşılar. Böylece bu {} içinde belirttiklerimi token içerisinde gireceğiz.
                     //giriş yapan kullanıcının erişmesi gereken sayfalar buraya yazılır.
                     
                 },

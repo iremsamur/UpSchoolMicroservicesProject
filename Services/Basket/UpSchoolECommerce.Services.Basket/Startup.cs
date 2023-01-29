@@ -55,7 +55,7 @@ namespace UpSchoolECommerce.Services.Basket
                 return redis;
             });
 
-
+            //Token'ý koruma altýna almak için aþaðýdaki satýrý tüm servislere ekliyoruz. Böylece her serviste token'ý koruma altýna almýþ oluyoruz
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
         

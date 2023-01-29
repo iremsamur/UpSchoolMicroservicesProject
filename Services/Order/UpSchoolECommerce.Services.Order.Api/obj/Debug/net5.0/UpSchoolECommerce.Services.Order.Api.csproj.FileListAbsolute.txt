@@ -64,3 +64,15 @@ C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSc
 C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Services.Order.Api\bin\Debug\net5.0\UpSchoolECommerce.Order.Infrastructure.pdb
 C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Services.Order.Api\bin\Debug\net5.0\UpSchoolECommerce.Order.Domain.pdb
 C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Services.Order.Api\bin\Debug\net5.0\UpSchoolECommerce.Order.Domain.Core.pdb
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Services.Order.Api\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Services.Order.Api\bin\Debug\net5.0\MediatR.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Services.Order.Api\bin\Debug\net5.0\MediatR.Contracts.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Services.Order.Api\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Services.Order.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Services.Order.Api\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Services.Order.Api\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Services.Order.Api\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Services.Order.Api\bin\Debug\net5.0\UpSchoolECommerce.Order.Application.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Services.Order.Api\bin\Debug\net5.0\UpSchoolECommerce.Shared.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Services.Order.Api\bin\Debug\net5.0\UpSchoolECommerce.Shared.pdb
+C:\Users\User\Desktop\UpSchoolBootcamp\UpSchoolMicroservices\Services\Order\UpSchoolECommerce.Services.Order.Api\bin\Debug\net5.0\UpSchoolECommerce.Order.Application.pdb
